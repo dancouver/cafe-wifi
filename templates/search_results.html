@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Search Results</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Map URL</th>
+                        <th>Image URL</th>
+                        <th>Location</th>
+                        <th>Seats</th>
+                        <th>Has Toilet</th>
+                        <th>Has Wifi</th>
+                        <th>Has Sockets</th>
+                        <th>Can Take Calls</th>
+                        <th>Coffee Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cafe in cafes %}
+                    <tr class="{{ 'table-light' if loop.index is even else 'table-secondary' }}">
+                        <td class="align-middle">{{ cafe.id }}</td>
+                        <td class="align-middle">{{ cafe.name }}</td>
+                        <td class="align-middle"><a href="{{ cafe.map_url }}" target="_blank">Link</a></td>
+                        <td class="align-middle"><a href="{{ cafe.img_url }}" target="_blank">Link</a></td>
+                        <td class="align-middle">{{ cafe.location }}</td>
+                        <td class="align-middle no-wrap">{{ cafe.seats }}</td>
+                        <td class="align-middle text-center">{% if cafe.has_toilet %}✔{% else %}✘{% endif %}</td>
+                        <td class="align-middle text-center">{% if cafe.has_wifi %}✔{% else %}✘{% endif %}</td>
+                        <td class="align-middle text-center">{% if cafe.has_sockets %}✔{% else %}✘{% endif %}</td>
+                        <td class="align-middle text-center">{% if cafe.can_take_calls %}✔{% else %}✘{% endif %}</td>
+                        <td class="align-middle">{{ cafe.coffee_price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

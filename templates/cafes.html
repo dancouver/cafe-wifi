@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}All Cafes{% endblock %}
+
+{% block content %}
+<h1 class="text-center">All Cafes</h1>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Map URL</th>
+                <th>Image URL</th>
+                <th>Location</th>
+                <th>Seats</th>
+                <th>Has Toilet</th>
+                <th>Has Wifi</th>
+                <th>Has Sockets</th>
+                <th>Can Take Calls</th>
+                <th>Coffee Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cafe in cafes %}
+            <tr class="{{ 'table-light' if loop.index is even else 'table-secondary' }}">
+                <td class="align-middle">{{ cafe.id }}</td>
+                <td class="align-middle">{{ cafe.name }}</td>
+                <td class="align-middle"><a href="{{ cafe.map_url }}" target="_blank">Link</a></td>
+                <td class="align-middle"><a href="{{ cafe.img_url }}" target="_blank">Link</a></td>
+                <td class="align-middle">{{ cafe.location }}</td>
+                <td class="align-middle no-wrap">{{ cafe.seats }}</td>
+                <td class="align-middle text-center">{% if cafe.has_toilet %}✔{% else %}✘{% endif %}</td>
+                <td class="align-middle text-center">{% if cafe.has_wifi %}✔{% else %}✘{% endif %}</td>
+                <td class="align-middle text-center">{% if cafe.has_sockets %}✔{% else %}✘{% endif %}</td>
+                <td class="align-middle text-center">{% if cafe.can_take_calls %}✔{% else %}✘{% endif %}</td>
+                <td class="align-middle">{{ cafe.coffee_price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

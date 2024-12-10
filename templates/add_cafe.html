@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Add New Cafe{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Add a New Cafe</h1>
+<form method="POST" action="{{ url_for('post_new_cafe') }}">
+    <div class="form-group">
+        <label for="name">Cafe Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter cafe name" required>
+    </div>
+    <div class="form-group">
+        <label for="map_url">Map URL</label>
+        <input type="url" class="form-control" id="map_url" name="map_url" placeholder="Enter map URL" required>
+    </div>
+    <div class="form-group">
+        <label for="img_url">Image URL</label>
+        <input type="url" class="form-control" id="img_url" name="img_url" placeholder="Enter image URL" required>
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" name="location" placeholder="Enter location" required>
+    </div>
+    <div class="form-group">
+        <label for="seats">Number of Seats</label>
+        <input type="text" class="form-control" id="seats" name="seats" placeholder="Enter number of seats" required>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="toilet" name="toilet">
+        <label class="form-check-label" for="toilet">Has Toilet</label>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="wifi" name="wifi">
+        <label class="form-check-label" for="wifi">Has Wifi</label>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="sockets" name="sockets">
+        <label class="form-check-label" for="sockets">Has Sockets</label>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="calls" name="calls">
+        <label class="form-check-label" for="calls">Can Take Calls</label>
+    </div>
+    <div class="form-group">
+        <label for="coffee_price">Coffee Price</label>
+        <input type="text" class="form-control" id="coffee_price" name="coffee_price" placeholder="Enter coffee price">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Add Cafe</button>
+</form>
+{% endblock %}
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Add New Cafe</title>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container mt-5">-->
+<!--        <h1 class="text-center">Add a New Cafe</h1>-->
+<!--        <form method="POST" action="{{ url_for('post_new_cafe') }}">-->
+<!--            <div class="form-group">-->
+<!--                <label for="name">Cafe Name</label>-->
+<!--                <input type="text" class="form-control" id="name" name="name" placeholder="Enter cafe name" required>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="map_url">Map URL</label>-->
+<!--                <input type="url" class="form-control" id="map_url" name="map_url" placeholder="Enter map URL" required>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="img_url">Image URL</label>-->
+<!--                <input type="url" class="form-control" id="img_url" name="img_url" placeholder="Enter image URL" required>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="location">Location</label>-->
+<!--                <input type="text" class="form-control" id="location" name="location" placeholder="Enter location" required>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="seats">Number of Seats</label>-->
+<!--                <input type="text" class="form-control" id="seats" name="seats" placeholder="Enter number of seats" required>-->
+<!--            </div>-->
+<!--            <div class="form-group form-check">-->
+<!--                <input type="checkbox" class="form-check-input" id="toilet" name="toilet">-->
+<!--                <label class="form-check-label" for="toilet">Has Toilet</label>-->
+<!--            </div>-->
+<!--            <div class="form-group form-check">-->
+<!--                <input type="checkbox" class="form-check-input" id="wifi" name="wifi">-->
+<!--                <label class="form-check-label" for="wifi">Has Wifi</label>-->
+<!--            </div>-->
+<!--            <div class="form-group form-check">-->
+<!--                <input type="checkbox" class="form-check-input" id="sockets" name="sockets">-->
+<!--                <label class="form-check-label" for="sockets">Has Sockets</label>-->
+<!--            </div>-->
+<!--            <div class="form-group form-check">-->
+<!--                <input type="checkbox" class="form-check-input" id="calls" name="calls">-->
+<!--                <label class="form-check-label" for="calls">Can Take Calls</label>-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="coffee_price">Coffee Price</label>-->
+<!--                <input type="text" class="form-control" id="coffee_price" name="coffee_price" placeholder="Enter coffee price">-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary btn-block">Add Cafe</button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->

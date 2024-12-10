@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to Cafe Finder{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Welcome to Cafe Finder</h1>
+<form method="GET" action="{{ url_for('get_cafe_at_location') }}">
+    <div class="form-group">
+        <label for="location">Enter Location:</label>
+        <input type="text" class="form-control" id="location" name="loc" placeholder="Enter location">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Search</button>
+</form>
+{% endblock %}

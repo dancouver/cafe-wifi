@@ -1,0 +1,40 @@
+body {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text color */
+}
+h1 {
+    margin-top: 20px;
+}
+.table {
+    background-color: #ffffff; /* Table background white */
+    color: #000; /* Table text color black */
+}
+.thead-dark th {
+    background-color: #343a40; /* Dark grey header */
+    color: #fff; /* Header text color white */
+}
+.table-light {
+    background-color: #f8f9fa !important; /* Light grey rows */
+}
+.table-secondary {
+    background-color: #e9ecef !important; /* Alternating grey rows */
+}
+.table a {
+    color: #007bff; /* Ensure links are blue */
+}
+.table td.no-wrap {
+    white-space: nowrap; /* Prevent line break for seats column */
+}
+.align-middle {
+    vertical-align: middle !important; /* Vertically center-align all rows */
+}
+.text-center {
+    text-align: center !important; /* Center-align text */
+}
+.navbar-custom {
+    background-color: #343a40; /* Dark grey background for navbar */
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #ffffff; /* White text color for navbar */
+}
